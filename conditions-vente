@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💳 Conditions Générales de Vente — Noyer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0a0a0a;--panel:#111;--accent:#26d19a;--text:#e5e5e5;--muted:#bbbbbb}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace;line-height:1.6;padding:40px 20px 80px;max-width:900px;margin:0 auto}
+    h1,h2{color:var(--accent);margin-top:32px;margin-bottom:14px}
+    h1{font-size:1.8rem;text-align:center;margin-bottom:22px}
+    p,li{color:var(--muted);margin-bottom:10px;font-size:.95rem}
+    ul{margin:8px 0 18px 22px}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .block{background:#111;border:1px solid #1f1f1f;border-radius:12px;padding:18px;margin:14px 0}
+    footer{margin-top:50px;text-align:center;color:#666;font-size:.85rem}
+  </style>
+</head>
+<body>
+
+  <h1>💳 Conditions Générales de Vente — Noyer</h1>
+
+  <p>Dernière mise à jour : <strong>10 novembre 2025</strong></p>
+
+  <h2>1. Objet et champ d’application</h2>
+  <div class="block">
+    <p>Les présentes Conditions Générales de Vente (CGV) régissent la souscription et l’utilisation des services proposés par <strong>Noyer</strong>, édité par <strong>Pierre Evrard</strong>, accessible via le site <strong>[à compléter : noyer.be]</strong>.</p>
+    <p>Elles s’appliquent à toute commande passée par un client professionnel (agence immobilière, société ou indépendant) utilisant la plateforme d’automatisation de publication immobilière <strong>Noyer</strong>.</p>
+  </div>
+
+  <h2>2. Description du service</h2>
+  <div class="block">
+    <p><strong>Noyer</strong> est un service SaaS (Software as a Service) permettant la publication automatique d’annonces immobilières sur les réseaux sociaux (Facebook, Instagram, etc.), la gestion des médias et la génération de descriptions assistée par IA.</p>
+    <p>Les fonctionnalités disponibles dépendent du plan d’abonnement souscrit (Basic, Premium, Premium+).</p>
+  </div>
+
+  <h2>3. Tarifs et abonnements</h2>
+  <div class="block">
+    <p>Les offres d’abonnement sont présentées sur le site <strong>Noyer</strong> avec leurs caractéristiques et prix respectifs :</p>
+    <ul>
+      <li>🟩 <strong>Noyer Basic</strong> — 49,99 €/mois — 8 publications/mois, 6 photos/publication, rédaction de description sur mesure.</li>
+      <li>🟢 <strong>Noyer Premium</strong> — 89,99 €/mois — 12 publications/mois, Facebook & Instagram, 8 photos/publication.</li>
+      <li>🟣 <strong>Noyer Premium+</strong> — 109,99 €/mois — 20 publications/mois, 10 photos/publication, ajout de logo sur les visuels.</li>
+    </ul>
+    <p>Les prix sont indiqués en euros, hors TVA applicable selon la législation en vigueur. <strong>Noyer</strong> se réserve le droit de modifier ses tarifs à tout moment. Les abonnements en cours ne sont pas affectés jusqu’à leur échéance.</p>
+  </div>
+
+  <h2>4. Commande et paiement</h2>
+  <div class="block">
+    <p>Les commandes et paiements sont effectués via la plateforme sécurisée <strong>Stripe</strong>. L’abonnement devient effectif après validation du paiement.</p>
+    <p>Les paiements sont récurrents mensuellement et se renouvellent automatiquement à la date anniversaire, sauf résiliation par le client.</p>
+    <p>En cas d’échec de paiement, <strong>Noyer</strong> peut suspendre temporairement l’accès au service jusqu’à régularisation.</p>
+  </div>
+
+  <h2>5. Durée, résiliation et renouvellement</h2>
+  <div class="block">
+    <p>Chaque abonnement est conclu pour une durée d’un (1) mois, renouvelable tacitement.</p>
+    <p>Le client peut résilier son abonnement à tout moment via son espace Stripe ou en écrivant à <a href="mailto:support@noyer.be">support@noyer.be</a>. La résiliation prendra effet à la fin de la période mensuelle en cours.</p>
+    <p><strong>Noyer</strong> peut résilier un contrat en cas de non-respect des CGU, fraude ou utilisation abusive du service.</p>
+  </div>
+
+  <h2>6. Responsabilités</h2>
+  <div class="block">
+    <p><strong>Noyer</strong> s’engage à fournir le service avec diligence et compétence, dans la limite d’une obligation de moyens.</p>
+    <p>Le client reste responsable du contenu publié via le service (annonces, images, textes, liens) et garantit que celui-ci respecte les droits des tiers et la législation en vigueur.</p>
+    <p><strong>Noyer</strong> ne pourra être tenu responsable en cas d’interruption du service due à une maintenance, à une panne de serveur, ou à un événement de force majeure.</p>
+  </div>
+
+  <h2>7. Données personnelles</h2>
+  <div class="block">
+    <p>Les données collectées dans le cadre de la vente et de l’utilisation du service sont traitées conformément à la <a href="confidentialite.html">Politique de confidentialité</a> de <strong>Noyer</strong>.</p>
+  </div>
+
+  <h2>8. Propriété intellectuelle</h2>
+  <div class="block">
+    <p>L’ensemble des éléments du site et du service <strong>Noyer</strong> (structure, code, interface, logo, textes, algorithmes) est protégé par le droit d’auteur et reste la propriété exclusive de Pierre Evrard.</p>
+    <p>Le client conserve la propriété de ses contenus (annonces, images, données importées) mais accorde à <strong>Noyer</strong> une licence d’utilisation strictement nécessaire à la fourniture du service.</p>
+  </div>
+
+  <h2>9. Droit applicable et juridiction</h2>
+  <div class="block">
+    <p>Les présentes CGV sont soumises au <strong>droit belge</strong>. Tout litige relatif à leur interprétation ou exécution relève de la compétence exclusive des tribunaux d’<strong>Anvers</strong>.</p>
+  </div>
+
+  <h2>10. Contact</h2>
+  <div class="block">
+    <p>📧 <a href="mailto:support@noyer.be">support@noyer.be</a><br>
+    📧 RGPD : <a href="mailto:privacy@noyer.be">privacy@noyer.be</a><br>
+    ☎️ +32 478 16 65 06</p>
+  </div>
+
+  <footer>© 2025 Noyer — Conditions Générales de Vente</footer>
+</body>
+</html>

@@ -67,16 +67,14 @@
         <div>
           <label for="listUrl">🗂️ URL de la page des biens (liste)</label>
           <input id="listUrl" name="listUrl" type="url" placeholder="https://www.votre-agence.fr/biens" required />
-          <p class="hint">👉 La page où tous vos biens sont listés.</p>
         </div>
 
         <div>
           <label for="itemUrl">🏷️ URL d’un bien (détail)</label>
           <input id="itemUrl" name="itemUrl" type="url" placeholder="https://www.votre-agence.fr/biens/maison-123" required />
-          <p class="hint">👉 La page d’une annonce précise.</p>
         </div>
 
-        <div class="warn">⚠️ Ne mettez pas la page d’accueil (ex : <em>www.monagence.fr</em>). Il faut la page liste et la page d’un bien.</div>
+        <div class="warn">⚠️ Ne mettez pas la page d’accueil. Il faut la page liste et la page d’un bien.</div>
 
         <div class="full">
           <button type="submit" class="btn" id="verifyBtn">Vérifier</button>
@@ -90,9 +88,7 @@
   <footer>© 2025 Noyer — Publication Automatique</footer>
 
   <script>
-    // 🔗 Remplace cette URL par TON webhook n8n d'éligibilité
     const WEBHOOK_URL = 'https://pierre07.app.n8n.cloud/webhook/recieve_url';
-
     const form = document.getElementById('eligForm');
     const verifyBtn = document.getElementById('verifyBtn');
     const continueBtn = document.getElementById('continueBtn');
@@ -102,51 +98,38 @@
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-
-      // Front validation simple
       const agency = form.agency.value.trim();
       const listUrl = form.listUrl.value.trim();
       const itemUrl = form.itemUrl.value.trim();
 
-      if (!agency || !listUrl || !itemUrl) {
-        setStatus('Veuillez remplir tous les champs.', 'err');
-        return;
-      }
-      if (listUrl === itemUrl) {
-        setStatus('Les deux URL doivent être différentes.', 'err');
-        return;
-      }
+      if (!agency || !listUrl || !itemUrl) { setStatus('Veuillez remplir tous les champs.', 'err'); return; }
 
       verifyBtn.disabled = true;
       setStatus('Vérification en cours…', '');
 
       try {
         const payload = { agency, listUrl, itemUrl, source: 'noyer-site' };
-
-        const res = await fetch(WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
-
-        // n8n doit renvoyer un JSON { eligible: boolean, reason?: string }
+        const res = await fetch(WEBHOOK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
         const data = await res.json().catch(() => ({}));
 
-        if (!res.ok) {
-          throw new Error(data?.reason || 'Erreur serveur');
-        }
+        if (!res.ok) throw new Error(data?.reason || 'Erreur serveur');
 
         if (data.eligible) {
           setStatus('✅ Site éligible. Vous pouvez continuer.', 'ok');
           continueBtn.style.display = 'inline-block';
           verifyBtn.style.display = 'none';
+
+          // 🔹 Enregistrer les données dans la mémoire locale
+          localStorage.setItem('noyerAgency', agency);
+          localStorage.setItem('noyerListUrl', listUrl);
+          localStorage.setItem('noyerItemUrl', itemUrl);
+
         } else {
-          setStatus('❌ Non éligible : ' + (data.reason || 'site dynamique non compatible.'), 'err');
+          setStatus('❌ Non éligible : ' + (data.reason || 'site non compatible.'), 'err');
           verifyBtn.disabled = false;
         }
       } catch (err) {
-        // Problème de CORS ou réseau
-        setStatus('⚠️ Impossible de vérifier (CORS/reseau). Vérifiez le webhook n8n. ' + (err.message || ''), 'err');
+        setStatus('⚠️ Vérification impossible : ' + err.message, 'err');
         verifyBtn.disabled = false;
       }
     });

@@ -4,27 +4,128 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NOYER — Publication Automatique</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Style global ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: #e5e5e5;
+      font-family: 'JetBrains Mono', monospace;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    /* ===== Titre principal ===== */
+    h1 {
+      font-size: 3.5rem;
+      color: #26d19a;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    /* ===== Sous-titre ===== */
+    h2 {
+      font-weight: 400;
+      font-size: 1.3rem;
+      color: #bcbcbc;
+      margin-bottom: 25px;
+      max-width: 600px;
+    }
+
+    /* ===== Description ===== */
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #999;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    /* ===== Bouton principal ===== */
+    button {
+      background-color: #26d19a;
+      color: #0a0a0a;
+      border: none;
+      border-radius: 10px;
+      padding: 16px 36px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(38, 209, 154, 0.4);
+    }
+
+    button:hover {
+      background-color: #1ea97b;
+      box-shadow: 0 0 25px rgba(38, 209, 154, 0.6);
+      transform: translateY(-2px);
+    }
+
+    /* ===== Pied de page ===== */
+    footer {
+      position: absolute;
+      bottom: 20px;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    /* ===== Animation du titre ===== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInButton {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      animation: fadeIn 1s ease forwards;
+    }
+
+    h2, p {
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    button {
+      animation: fadeInButton 1.5s ease forwards;
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <img src="images/logo_noyer.png" alt="Logo Noyer" class="logo" />
+  <main>
     <h1>NOYER</h1>
-  </header>
-
-  <main class="main">
-    <h2>Automatisez la publication de vos biens immobiliers</h2>
+    <h2>Publication automatique de vos biens immobiliers</h2>
     <p>
-      Noyer vous aide à publier automatiquement vos annonces immobilières sur les réseaux sociaux. 
-      Gagnez du temps et concentrez-vous sur l’essentiel : vos clients.
+      Automatisez la mise en ligne de vos annonces sur les réseaux sociaux.  
+      Gagnez du temps, augmentez votre visibilité et concentrez-vous sur l’essentiel : vos clients.
     </p>
     <button id="startBtn">Commencer</button>
   </main>
 
-  <footer class="footer">
-    <p>© 2025 Noyer — Publication Automatique</p>
+  <footer>
+    © 2025 Noyer — Publication Automatique
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById('startBtn').addEventListener('click', () => {
+      window.location.href = 'verifier.html';
+    });
+  </script>
 </body>
 </html>

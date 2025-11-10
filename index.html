@@ -73,21 +73,40 @@
 
     footer {
       position: absolute;
-      bottom: 25px;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
       font-size: 0.9rem;
       color: var(--muted);
     }
 
-    footer a {
+    .footer-links {
+      margin-top: 8px;
+    }
+
+    .footer-links a {
       color: var(--accent);
       text-decoration: none;
-      margin-left: 8px;
+      margin: 0 8px;
       transition: color 0.3s ease;
     }
 
-    footer a:hover {
+    .footer-links a:hover {
       color: var(--accent-hover);
       text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      footer {
+        font-size: 0.8rem;
+        bottom: 10px;
+      }
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
@@ -105,7 +124,12 @@
 
   <footer>
     © 2025 Noyer — Publication Automatique
-    <a href="confidentialite.html">Politique de confidentialité</a>
+    <div class="footer-links">
+      <a href="confidentialite.html">Politique de confidentialité</a> ·
+      <a href="mentions-legales.html">Mentions légales</a> ·
+      <a href="conditions-utilisation.html">CGU</a> ·
+      <a href="conditions-vente.html">CGV</a>
+    </div>
   </footer>
 
 </body>

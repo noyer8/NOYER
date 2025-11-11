@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOYER — Publication Automatique</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,127 +10,181 @@
   <style>
     :root {
       --bg: #0a0a0a;
+      --text: #e7e7e7;
+      --muted: #a1a1a1;
       --accent: #26d19a;
-      --accent-hover: #1ea97b;
-      --text: #e5e5e5;
-      --muted: #9a9a9a;
+      --accent-dark: #1ea97b;
+      --panel: #111;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background-color: var(--bg);
-      color: var(--text);
       font-family: 'JetBrains Mono', monospace;
+      background: radial-gradient(1000px circle at 50% -20%, rgba(38,209,154,0.12), transparent 60%), var(--bg);
+      color: var(--text);
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      height: 100vh;
-      text-align: center;
+      min-height: 100vh;
       padding: 0 20px;
     }
 
+    header {
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 24px 0 12px;
+    }
+
+    header img {
+      height: 45px;
+      width: auto;
+      margin-left: 10px;
+      filter: drop-shadow(0 0 8px rgba(38,209,154,0.3));
+    }
+
+    main {
+      text-align: center;
+      max-width: 720px;
+      margin-top: 40px;
+    }
+
     h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
       color: var(--accent);
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      letter-spacing: 2px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 12px;
     }
 
     h2 {
       font-weight: 400;
-      font-size: 1.1rem;
-      margin-bottom: 30px;
+      font-size: 1.2rem;
+      margin-bottom: 14px;
+      color: var(--text);
     }
 
     p {
-      max-width: 600px;
       color: var(--muted);
-      line-height: 1.6;
+      font-size: 0.95rem;
+      line-height: 1.7;
       margin-bottom: 30px;
     }
 
-    .btn {
-      background-color: var(--accent);
-      color: #000;
-      font-weight: bold;
+    .cta {
+      background: var(--accent);
+      color: #08241a;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 12px;
       text-decoration: none;
-      padding: 12px 28px;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px rgba(38,209,154,0.4);
+      transition: all 0.25s ease;
+      display: inline-block;
+      box-shadow: 0 0 20px rgba(38,209,154,0.25);
     }
 
-    .btn:hover {
-      background-color: var(--accent-hover);
+    .cta:hover {
+      background: var(--accent-dark);
       transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(38,209,154,0.4);
+    }
+
+    /* SECTION CARTES */
+    .steps {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 70px;
+      max-width: 1000px;
+    }
+
+    .step {
+      background: var(--panel);
+      border: 1px solid rgba(38,209,154,0.2);
+      border-radius: 14px;
+      padding: 22px 26px;
+      flex: 1 1 280px;
+      max-width: 320px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .step:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(38,209,154,0.15);
+    }
+
+    .step h3 {
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
     }
 
     footer {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
+      margin-top: 80px;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--muted);
+      padding-bottom: 30px;
     }
 
-    .footer-links {
-      margin-top: 8px;
-    }
-
-    .footer-links a {
+    footer a {
       color: var(--accent);
       text-decoration: none;
       margin: 0 8px;
-      transition: color 0.3s ease;
     }
 
-    .footer-links a:hover {
-      color: var(--accent-hover);
+    footer a:hover {
       text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      footer {
-        font-size: 0.8rem;
-        bottom: 10px;
-      }
-      .footer-links {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        margin-top: 10px;
-      }
     }
   </style>
 </head>
+
 <body>
+  <header>
+    <img src="https://i.imgur.com/2i2T706.png" alt="Logo Noyer">
+  </header>
 
   <main>
     <h1>NOYER</h1>
     <h2>Publication automatique de vos biens immobiliers</h2>
-    <p>
-      Automatisez la mise en ligne de vos annonces sur les réseaux sociaux. 
-      Gagnez du temps, augmentez votre visibilité et concentrez-vous sur l’essentiel : vos clients.
-    </p>
-    <a href="verifier.html" class="btn">Commencer</a>
+    <p>Automatisez la mise en ligne de vos annonces sur les réseaux sociaux. Gagnez du temps, augmentez votre visibilité et concentrez-vous sur l’essentiel : vos clients.</p>
+    <a href="verifier.html" class="cta">Commencer</a>
+
+    <section class="steps">
+      <div class="step">
+        <h3>📝 Répondez à quelques questions</h3>
+        <p>En moins de 2 minutes, indiquez vos informations et préférences d’agence. Noyer personnalise vos publications automatiquement.</p>
+      </div>
+      <div class="step">
+        <h3>🔗 Connectez votre compte Facebook</h3>
+        <p>Reliez votre page professionnelle pour permettre à Noyer de publier vos annonces immobilières sans effort.</p>
+      </div>
+      <div class="step">
+        <h3>⚡ Laissez Noyer s’occuper du reste</h3>
+        <p>Vos annonces sont publiées automatiquement, avec vos photos, votre logo et un texte professionnel optimisé.</p>
+      </div>
+    </section>
   </main>
 
   <footer>
-    © 2025 Noyer — Publication Automatique
-    <div class="footer-links">
+    <p>© 2025 Noyer — Publication Automatique</p>
+    <div class="links">
       <a href="confidentialite.html">Politique de confidentialité</a> ·
-      <a href="mentions-legales.html">Mentions légales</a> ·
-      <a href="conditions-utilisation.html">CGU</a> ·
-      <a href="conditions-vente.html">CGV</a>
+      <a href="mentions.html">Mentions légales</a> ·
+      <a href="cgu.html">CGU</a> ·
+      <a href="cgv.html">CGV</a>
     </div>
   </footer>
-
 </body>
 </html>

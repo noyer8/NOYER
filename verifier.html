@@ -56,8 +56,8 @@
 
     .title h1 {
       color: var(--accent);
-      letter-spacing: 4px;
-      font-size: 2.6rem;
+      letter-spacing: 3px;
+      font-size: 2.4rem;
       text-transform: uppercase;
     }
 
@@ -65,6 +65,10 @@
       color: var(--muted);
       margin-top: 8px;
       font-size: 1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
     }
 
     .card {
@@ -169,8 +173,13 @@
 
   <div class="wrap">
     <div class="title">
-      <h1>NOYER</h1>
-      <p class="subtitle">Vérifiez si votre site immobilier est compatible avant de continuer.</p>
+      <h1>Vérification d’éligibilité</h1>
+      <p class="subtitle">
+        Noyer est compatible uniquement avec les sites immobiliers dont les annonces sont affichées 
+        <strong>statiquement (sans chargement JavaScript)</strong>.  
+        <br><br>
+        Veuillez entrer ci-dessous les liens de votre site pour vérifier la compatibilité avant de continuer.
+      </p>
     </div>
 
     <div class="card">
@@ -198,7 +207,7 @@
             <li>✅ L’URL de la page qui affiche <strong>tous vos biens</strong></li>
             <li>✅ L’URL d’un <strong>seul bien précis</strong> (exemple : une maison ou un appartement)</li>
           </ul>
-          Cela nous permet de vérifier que votre site ne charge pas ses annonces uniquement via JavaScript.
+          Cela permet à Noyer de vérifier que votre site est compatible avec notre système d’importation.
         </div>
 
         <div class="full">

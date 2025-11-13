@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #0a0a0a;
@@ -23,24 +24,25 @@
       color: #e5e5e5;
       font-family: 'JetBrains Mono', monospace;
       min-height: 100vh;
-      padding: 30px 20px 60px;
+      padding: 30px 20px 80px;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    /* 🔹 LOGO GLOBAL (comme sur verifier + questions) */
+    /* 🟩 Logo identique aux autres pages */
     header {
       width: 100%;
-      max-width: 1100px;
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
-      margin-bottom: 35px;
+      position: absolute;
+      top: 25px;
+      left: 40px;
     }
 
     header img {
-      height: 90px;
+      height: 120px;
       width: auto;
       cursor: pointer;
     }
@@ -49,6 +51,7 @@
       color: var(--accent);
       letter-spacing: 3px;
       text-transform: uppercase;
+      margin-top: 150px;
       margin-bottom: 40px;
       font-size: 2.3rem;
       text-align: center;
@@ -143,17 +146,31 @@
     }
 
     footer {
-      margin-top: 50px;
+      margin-top: 60px;
+      text-align: center;
       color: #666;
       font-size: .9rem;
-      text-align: center;
+    }
+
+    .footer-links {
+      margin-top: 12px;
+    }
+
+    .footer-links a {
+      color: var(--accent);
+      margin: 0 8px;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- 🔹 LOGO CLIQUABLE (vers index.html) -->
+  <!-- 🟩 LOGO -->
   <header>
     <a href="index.html">
       <img src="https://i.imgur.com/2i2T706.png" alt="Logo Noyer">
@@ -163,6 +180,7 @@
   <h1>Choisissez votre plan d’abonnement</h1>
 
   <div class="plans">
+
     <!-- Noyer Basic -->
     <div class="card">
       <img src="https://i.imgur.com/78GipiM.png" alt="Noyer Basic">
@@ -195,9 +213,9 @@
       </div>
     </div>
 
-    <!-- Noyer Premium + -->
+    <!-- Noyer Business -->
     <div class="card">
-      <img src="https://i.imgur.com/EJ6lS7M.png" alt="Noyer Premium +">
+      <img src="https://i.imgur.com/EJ6lS7M.png" alt="Noyer Business">
       <div class="card-content">
         <h2>Noyer Buisness</h2>
         <p class="price">109,99 € / mois</p>
@@ -210,9 +228,19 @@
         <a href="https://buy.stripe.com/test_9B6bJ39jTcIG2Ps5ZF9MY02" class="btn">Choisir ce plan</a>
       </div>
     </div>
+
   </div>
 
-  <footer>© 2025 Noyer — Publication Automatique</footer>
+  <footer>
+    © 2025 Noyer — Publication Automatique
+
+    <div class="footer-links">
+      <a href="confidentialite.html">Politique de confidentialité</a> ·
+      <a href="mentions-legales.html">Mentions légales</a> ·
+      <a href="conditions-utilisation.html">CGU</a> ·
+      <a href="conditions-vente.html">CGV</a>
+    </div>
+  </footer>
 
 </body>
 </html>

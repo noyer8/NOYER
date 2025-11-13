@@ -26,18 +26,15 @@
       padding: 40px 20px 80px;
     }
 
-    /* Header logo */
+    /* 🟩 Logo identique à la page de vérification */
     header {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto 30px auto;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
+      position: absolute;
+      top: 25px;
+      left: 40px;
     }
 
     header img {
-      height: 70px;
+      height: 120px;
       width: auto;
       cursor: pointer;
     }
@@ -47,6 +44,7 @@
       color: var(--accent);
       font-size: 2.3rem;
       letter-spacing: 3px;
+      margin-top: 160px;
       margin-bottom: 10px;
       text-transform: uppercase;
     }
@@ -153,41 +151,57 @@
 
 <div class="card">
 
-  <h2>1. Comment NOYER publie vos biens</h2>
-  <p>NOYER récupère automatiquement les informations et photos de vos biens directement depuis votre site.</p>
-  <ul>
-    <li>24h après votre inscription, vos publications démarrent automatiquement.</li>
-    <li>Les photos et textes sont reformattés pour un rendu professionnel.</li>
-    <li>Une seule publication maximum par jour de diffusion.</li>
-  </ul>
+  <h2>1. Début des publications</h2>
+  <p>
+    Après votre inscription, NOYER configure votre système et vérifie que votre site est parfaitement compatible.
+    <br><br>
+    ⏳ <strong>Dans les 48 heures</strong>, vous recevez un e-mail confirmant que votre automatisation est active.
+  </p>
 
-  <h2>2. Jours de publication</h2>
+  <h2>2. Heure de publication</h2>
+  <p>
+    Vos biens sont publiés chaque jour de diffusion à <strong>18h</strong>,
+    avec une légère variation automatique de <strong>± 15 minutes</strong>
+    pour un aspect naturel.
+  </p>
+
+  <h2>3. Jours de publication</h2>
   <p>Selon l’abonnement choisi :</p>
   <ul>
-    <li><strong>Basic :</strong> Mardi & Jeudi</li>
+    <li><strong>Basic :</strong> Mardi et Jeudi</li>
     <li><strong>Premium :</strong> Lundi → Vendredi</li>
-    <li><strong>Premium + :</strong> Tous les jours (sauf week-end)</li>
+    <li><strong>Business :</strong> Tous les jours de la semaine</li>
   </ul>
 
-  <h2>3. Votre site doit rester compatible</h2>
+  <h2>4. Limite des biens publiés</h2>
   <p>
-    NOYER lit automatiquement vos biens sur votre site internet.  
-    Si vous modifiez la structure ou changez d’hébergeur / thème :
+    NOYER publie <strong>un bien par jour de publication</strong> afin d’assurer
+    une visibilité optimale et éviter toute saturation auprès de votre audience.
+  </p>
+
+  <h2>5. Lecture automatique de votre site</h2>
+  <p>
+    NOYER récupère automatiquement :
   </p>
   <ul>
-    <li>Il suffit de nous prévenir pour adapter la configuration.</li>
-    <li>Votre service continue normalement après mise à jour.</li>
+    <li>le titre du bien,</li>
+    <li>la description,</li>
+    <li>les photos,</li>
+    <li>le prix et les caractéristiques.</li>
   </ul>
-
-  <h2>4. Connexion à votre page Facebook</h2>
   <p>
-    La connexion se fait une seule fois via Facebook Login.  
-    Votre accès reste valide automatiquement tant que vous ne le révoquez pas.
+    ⚠️ Si vous modifiez votre site (structure, thème, URLs), il suffit de nous prévenir afin d’adapter la configuration.
   </p>
 
-  <h2>5. Sécurité & confidentialité</h2>
+  <h2>6. Connexion à votre page Facebook</h2>
   <p>
-    Toutes les publications, données et connexions sont sécurisées et traitées conformément au RGPD.
+    La connexion se fait une seule fois via Facebook Login.
+    Une fois activée, elle reste valable automatiquement tant que vous ne la désactivez pas.
+  </p>
+
+  <h2>7. Sécurité & confidentialité</h2>
+  <p>
+    Toutes les connexions, données et publications sont sécurisées et traitées conformément au RGPD.
   </p>
 
   <div class="accept-box">

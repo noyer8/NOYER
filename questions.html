@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #0a0a0a;
@@ -17,23 +18,35 @@
       --panel: #111;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       background-color: var(--bg);
       color: var(--text);
       font-family: 'JetBrains Mono', monospace;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       padding: 40px 20px 80px;
+      position: relative;
+    }
+
+    /* 🟩 LOGO CLIQUABLE */
+    .logo {
+      position: absolute;
+      top: 25px;
+      left: 40px;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .logo img {
+      height: 120px;
+      width: auto;
     }
 
     h1 {
       color: var(--accent);
       text-align: center;
       font-size: 2rem;
+      margin-top: 120px;
       margin-bottom: 40px;
       letter-spacing: 2px;
     }
@@ -82,8 +95,8 @@
       cursor: pointer;
       font-size: 1rem;
       transition: 0.3s;
-      display: inline-block;
       text-decoration: none;
+      display: inline-block;
     }
 
     button:hover, .btn:hover {
@@ -118,7 +131,6 @@
       border: 1px solid #1f1f1f;
       border-radius: 10px;
       padding: 20px;
-      text-align: left;
       color: var(--text);
       cursor: pointer;
       transition: 0.3s ease;
@@ -146,14 +158,12 @@
 
     .footer-links a {
       color: var(--accent);
-      text-decoration: none;
       margin: 0 8px;
-      transition: color 0.3s ease;
+      text-decoration: none;
     }
 
     .footer-links a:hover {
       color: var(--accent-hover);
-      text-decoration: underline;
     }
 
     #loading {
@@ -165,11 +175,18 @@
     }
   </style>
 </head>
+
 <body>
+
+  <!-- 🟩 LOGO CLIQUABLE -->
+  <div class="logo" onclick="window.location.href='index.html'">
+    <img src="https://i.imgur.com/2i2T706.png" alt="Logo Noyer">
+  </div>
 
   <h1>COMPLÉTEZ VOS INFORMATIONS</h1>
 
   <form id="questionForm" action="https://pierre07.app.n8n.cloud/webhook/infosclients" method="POST">
+
     <label>🏢 Nom de l’agence</label>
     <input type="text" id="agencyName" name="agencyName" readonly />
 
@@ -212,6 +229,7 @@
 
     <button type="submit">Envoyer</button>
     <p id="loading">⏳ Envoi en cours...</p>
+
   </form>
 
   <footer>
@@ -225,11 +243,10 @@
   </footer>
 
   <!-- Facebook SDK -->
-  <script async defer crossorigin="anonymous" 
+  <script async defer crossorigin="anonymous"
     src="https://connect.facebook.net/fr_FR/sdk.js"></script>
 
   <script>
-    // Initialisation du SDK Facebook
     window.fbAsyncInit = function() {
       FB.init({
         appId      : '2451194691945458',
@@ -239,15 +256,11 @@
       });
     };
 
-    // Fonction de connexion Facebook
     function loginWithFacebook() {
       FB.login(function(response) {
         if (response.authResponse) {
-          console.log('✅ Connecté avec succès !');
           const accessToken = response.authResponse.accessToken;
-          console.log('Access Token :', accessToken);
 
-          // Envoi du token à n8n
           fetch("https://pierre07.app.n8n.cloud/webhook/facebook_login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -256,12 +269,11 @@
 
           alert("Connexion réussie !");
         } else {
-          console.log('❌ Connexion annulée ou échouée.');
+          console.log('❌ Connexion annulée.');
         }
       }, {scope: 'email,pages_show_list,pages_manage_posts,pages_read_engagement'});
     }
 
-    // Récupère les infos de verifier.html
     document.addEventListener("DOMContentLoaded", () => {
       const agencyName = localStorage.getItem("agencyName");
       if (agencyName) {
@@ -294,8 +306,7 @@
             loading.textContent = "⚠️ Une erreur est survenue, veuillez réessayer.";
           }
         } catch (error) {
-          console.error("Erreur :", error);
-          loading.textContent = "❌ Erreur de connexion, réessayez plus tard.";
+          loading.textContent = "❌ Erreur de connexion.";
         }
       });
     });

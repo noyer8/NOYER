@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOYER — Publication Automatique</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #000000;
@@ -16,6 +18,7 @@
       --accent-dark: #1ea97b;
       --panel: #101010;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
@@ -30,7 +33,7 @@
       position: relative;
     }
 
-    /* 🟩 Logo identique à la page de vérification */
+    /* 🟩 Logo */
     header {
       position: absolute;
       top: 25px;
@@ -45,7 +48,7 @@
     main {
       text-align: center;
       max-width: 720px;
-      margin-top: 160px; /* pour laisser la place au logo */
+      margin-top: 160px;
     }
 
     h1 {
@@ -161,6 +164,7 @@
 </head>
 
 <body>
+
   <header>
     <img src="https://i.imgur.com/3V2jomn.png" alt="Logo Noyer">
   </header>
@@ -169,6 +173,7 @@
     <h1>NOYER</h1>
     <h2>Publication automatique de vos biens immobiliers</h2>
     <p>Automatisez la mise en ligne de vos annonces sur les réseaux sociaux. Gagnez du temps, augmentez votre visibilité et concentrez-vous sur l’essentiel : vos clients.</p>
+
     <a href="verifier.html" class="cta">Commencer</a>
 
     <section class="steps">
@@ -176,15 +181,59 @@
         <h3>📝 Répondez à quelques questions</h3>
         <p>En moins de 2 minutes, indiquez vos informations et préférences d’agence. Noyer personnalise vos publications automatiquement.</p>
       </div>
+
       <div class="step">
         <h3>🔗 Connectez votre compte Facebook</h3>
         <p>Reliez votre page professionnelle pour permettre à Noyer de publier vos annonces immobilières sans effort.</p>
       </div>
+
       <div class="step">
         <h3>⚡ Laissez Noyer s’occuper du reste</h3>
         <p>Vos annonces sont publiées automatiquement, avec vos photos, votre logo et un texte professionnel optimisé.</p>
       </div>
     </section>
+
+    <!-- 🟩 SECTION DEMO AVEC IMAGE + POST FACEBOOK -->
+    <section style="margin-top: 90px; width: 100%; max-width: 900px; text-align: center;">
+
+      <h2 style="color: var(--accent); font-size: 1.8rem; letter-spacing: 2px; margin-bottom: 10px;">
+        Exemple de publication générée
+      </h2>
+
+      <p style="color: var(--muted); font-size: 0.95rem; margin-bottom: 35px;">
+        Voici un aperçu concret du résultat publié automatiquement sur Facebook à partir d’une page immobilière.
+      </p>
+
+      <!-- IMAGE DU SITE FICTIF -->
+      <div style="
+        background: var(--panel);
+        border-radius: 14px;
+        padding: 18px;
+        border: 1px solid rgba(255,255,255,0.08);
+        margin-bottom: 45px;
+        box-shadow: 0 0 25px rgba(38,209,154,0.15);
+      ">
+        <img src="https://i.imgur.com/OZtHQwG.jpeg"
+             alt="Exemple page immobilière"
+             style="width: 100%; border-radius: 10px;">
+      </div>
+
+      <!-- POST FACEBOOK INTÉGRÉ -->
+      <div style="display: flex; justify-content: center;">
+        <iframe
+          src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02CXhic2aQfjYPsZTVaCy9SQT9zmSM3bBcdiTJKUNGYYFiFGjWbMMDcJR2WSZuHSkNl%26id%3D61583220933420&show_text=true&width=500"
+          width="500"
+          height="773"
+          style="border:none;overflow:hidden; max-width: 100%; border-radius: 12px;"
+          scrolling="no"
+          frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+        </iframe>
+      </div>
+
+    </section>
+
   </main>
 
   <footer>
@@ -196,5 +245,6 @@
       <a href="conditions-vente.html">CGV</a>
     </div>
   </footer>
+
 </body>
 </html>

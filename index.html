@@ -121,30 +121,40 @@
       line-height: 1.6;
     }
 
-    /* ---- CAROUSEL ---- */
+    /* ---- CAROUSEL (corrigé + centré) ---- */
     .carousel {
       margin-top: 80px;
       width: 100%;
       max-width: 480px;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* ← centre tout */
     }
 
     .slide {
       display: none;
       justify-content: center;
+      width: 100%;       /* ← centrage garanti */
+      text-align: center;
     }
 
     .slide.active {
       display: flex;
     }
 
-    .carousel img {
-      width: 350px;
+    .carousel img,
+    .carousel iframe {
+      margin: 0 auto;     /* ← centre l’image et l’iframe */
+      display: block;
       border-radius: 12px;
     }
 
+    .carousel img {
+      width: 350px;
+    }
+
     iframe {
-      border-radius: 12px;
       background: #fff;
     }
 
@@ -217,6 +227,7 @@
 
   <!-- CAROUSEL -->
   <section class="carousel">
+
     <div class="slide active">
       <img src="https://i.imgur.com/0QLEzUn.jpeg" alt="Démo exemple">
     </div>
